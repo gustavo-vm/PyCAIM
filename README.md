@@ -1,10 +1,4 @@
-CAIM is a supervised discretization method [1] and Python-CAIM is a Python implementation of CAIM. **This is a work in progress, results should be closely inspected**. The goal is to provide both a CLI to discretize data for later use as well as a class for programmatic usage. Pull requests welcome.
-
-There is a [MATLAB implementation](http://www.mathworks.com/matlabcentral/fileexchange/24344-caim-discretization-algorithm) by Guangdi Li and a [Java implementation](http://www.cioslab.vcu.edu/index.html) (Research->Data Mining Tool) by the author. The latter being an implementation of the currently unpublished CAIM+ version of the algorithm.
-
-Current Python-CAIM is working on UCI's Musk1 dataset as well as other toy datasets. Results are validated against the Java implementation (see above).
-
-On performance, the Java implementation has notably lower latency (higher performance). This may be due to Java being fundamentally faster than Python, design tricks/shortcuts, or a combination of both. Currently difficult to determine source of improved performance since source code does not appear to be included in the CAIM JAR file. The MatLab version is comparable and often faster for very small datasets. However, Python-CAIM can parallelize discretization, and can thus scale better for datasets with many features.
+LAIM is a supervised discretization method for multi label data [1] and Python-LAIM is a implementation of LAIM. It is an adaptation of [Python-CAIM](https://github.com/Morgan243/PyCAIM).
 
 **CLI Options**
 
@@ -53,11 +47,5 @@ Which should be interpretted as:
 
 The output dataset will use the right-end of each interval as the discretized value.
 
-**TODO**
 
-* **Fix Unit Tests**
-* Continue to re-implement in Pandas/NumPy for speed (avoid loops)
-* Add more test data and corresponding unittests
-* Clean-up API and document
-
-[1] Kurgan, L. and Cios, K.J., 2004. CAIM Discretization Algorithm. IEEE Transactions on Knowledge and Data Engineering, 16(2):145-153
+[1] Cano, A., Luna, J. M., Gibaja, E. L., & Ventura, S. (2016). LAIM discretization for multi-label data. Information Sciences, 330, 370-384.
